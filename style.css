@@ -506,8 +506,10 @@ ul {
     position: relative;
 }
 
-.footer-logo {
-    font-size: 1.8rem;
+.footer-logo-img {
+    height: 60px; /* Pode ser um pouco maior que no header */
+    width: auto;
+    margin-bottom: 15px;
 }
 
 .highlight-footer {
