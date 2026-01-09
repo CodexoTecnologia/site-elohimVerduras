@@ -77,10 +77,10 @@ ul {
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--earth-color);
+.logo img {
+    height: 50px; /* Ajuste este valor conforme a altura desejada do menu */
+    width: auto;   /* Mantém a proporção correta */
+    display: block;
 }
 
 .highlight {
