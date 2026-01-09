@@ -53,12 +53,12 @@
 
     <section id="sobre" class="section">
         <div class="container about-grid">
-            <div class="about-text">
+            <div class="about-text reveal">
                 <h2>Tradição e Modernidade no Campo</h2>
                 <p>Fundada em 2018, a <strong>Verduras Elohim</strong> nasceu com a missão de levar alimento de verdade para a mesa dos brasileiros.</p>
                 <p>Especialistas em <strong>horticultura</strong>, unimos o cuidado da agricultura familiar com técnicas modernas como a hidroponia. Nossa produção abrange desde o plantio de mudas selecionadas até a colheita rigorosa, garantindo frescor inigualável.</p>
                 
-                <ul class="features-list">
+                <ul class="features-list reveal">
                     <li><i class="fas fa-check-circle"></i> Produção Própria (Sementes e Mudas)</li>
                     <li><i class="fas fa-check-circle"></i> Venda direta ao Consumidor e Empresas</li>
                     <li><i class="fas fa-check-circle"></i> Variedade de Folhosas, Raízes e Legumes</li>
@@ -73,14 +73,14 @@
 
     <section id="atacado-varejo" class="section bg-primary text-white">
         <div class="container text-center">
-            <h2>Quem nós atendemos?</h2>
+            <h2 class="reveal">Quem nós atendemos?</h2> <div class="business-types">
             <div class="business-types">
-                <div class="b-type">
+                <div class="b-type reveal">
                     <i class="fas fa-shopping-basket"></i>
                     <h3>Varejo (Famílias)</h3>
                     <p>Hortifruti fresco para o dia a dia da sua casa. Atendemos o consumidor final com carinho e qualidade.</p>
                 </div>
-                <div class="b-type">
+                <div class="b-type reveal">
                     <i class="fas fa-truck-loading"></i>
                     <h3>Atacado (Empresas)</h3>
                     <p>Abastecemos restaurantes, buffets, quitandas e mercados com pontualidade e preços competitivos.</p>
@@ -97,19 +97,19 @@
             </div>
 
             <div class="products-grid">
-                <div class="product-card">
+                <div class="product-card reveal">
                     <div class="product-icon"><i class="fas fa-leaf"></i></div>
                     <h3>Alfaces Selecionadas</h3>
                     <p>Variedade para sua salada: Americana, Crespa e a vibrante Alface Roxa.</p>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card reveal">
                     <div class="product-icon"><i class="fas fa-spa"></i></div>
                     <h3>Verdes & Nutrição</h3>
                     <p>Rúcula Hidropônica, Brócolis (Hanabi), Couve Folha e Espinafre.</p>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card reveal">
                     <div class="product-icon"><i class="fas fa-mortar-pestle"></i></div>
                     <h3>Aromas & Temperos</h3>
                     <p>Hortelã Hidropônica, Salsinha, Cebolinha, Manjericão e Coentro.</p>
@@ -133,47 +133,71 @@
         </div>
     </section>
 
-    <section id="contato" class="section contact-section">
+    <section id="contato" class="cta-section">
         <div class="container">
-            <div class="contact-box">
-                <h2>Entre em Contato</h2>
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p><strong>Localização:</strong><br>Rodovia SP 151 km 5 - Geada<br>Iracemápolis - SP, 13495-000</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <p><strong>Pedidos e Cotações:</strong><br>(19) 99676-6210</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="far fa-clock"></i>
-                        <p><strong>Horário de Funcionamento:</strong><br>Todos os dias<br>Das 08:00 às 18:00</p>
-                    </div>
-                </div>
-                <a href="https://wa.me/5519996766210" class="btn btn-whatsapp-large">
-                    <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+            <div class="cta-content reveal">
+                <h2>Leve saúde para sua mesa hoje mesmo</h2>
+                <p>Atendemos famílias e empresas com agilidade e produtos selecionados. Faça seu pedido agora.</p>
+                <a href="https://wa.me/5519996766210" target="_blank" class="btn btn-whatsapp-large">
+                    <i class="fab fa-whatsapp"></i> Fazer Pedido pelo WhatsApp
                 </a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-wrapper">
-            <div class="footer-social">
-                <a href="https://www.instagram.com/elohim_verduras" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/5519996766210" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            </div>
-            
-            <div class="footer-info">
-                <p>&copy; <span id="year"></span> <strong>ELOHIM AGRO COMERCIAL LTDA</strong>. Todos os direitos reservados.</p>
-                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Horticultura, Comércio Atacadista e Varejista.</p>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-col">
+                    <h3 class="footer-logo">Verduras <span class="highlight-footer">Elohim</span></h3>
+                    <p class="footer-desc">Produzindo qualidade e frescor desde 2018. Do campo direto para você.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/elohim_verduras" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5519996766210" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#sobre">Nossa História</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#atacado-varejo">Atacado & Varejo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Informações</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Rodovia SP 151 km 5 - Geada<br>Iracemápolis - SP, 13495-000</span>
+                        </li>
+                        <li>
+                            <i class="far fa-clock"></i>
+                            <span>Seg a Dom: 08:00 às 18:00</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>(19) 99676-6210</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="footer-credits">
-                <a href="https://codexo.com.br" target="_blank" class="codexo-link" title="Codexo - Criação de Sites Profissionais">
-                    <img src="images/logo_codexo_nome_branco.svg" alt="Codexo" class="codexo-logo">
-                </a>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; <span id="year"></span> <strong>ELOHIM AGRO COMERCIAL LTDA</strong>.<br>Todos os direitos reservados.</p>
+                </div>
+                
+                <div class="developer">
+                    <span>Desenvolvido por</span>
+                    <a href="https://codexo.com.br" target="_blank" title="Codexo - Criação de Sites Profissionais">
+                        <img src="images/logo_codexo_nome_branco.svg" alt="Codexo" class="codexo-logo">
+                    </a>
+                </div>
             </div>
         </div>
     </footer>

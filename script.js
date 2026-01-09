@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- Menu Mobile ---
+    // =========================================
+    // 1. MENU MOBILE
+    // =========================================
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -19,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fechar menu ao clicar (Mobile)
+    // Fechar menu ao clicar em um link (Mobile)
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -31,13 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Atualizar Ano ---
+    // =========================================
+    // 2. ATUALIZAR ANO (Rodapé)
+    // =========================================
     const yearSpan = document.getElementById('year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // --- Scroll Suave ---
+    // =========================================
+    // 3. SCROLL SUAVE (Smooth Scroll)
+    // =========================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -56,7 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Active Scroll Spy (Marca o menu conforme rola) ---
+    // =========================================
+    // 4. SCROLL SPY (Menu Ativo ao Rolar)
+    // =========================================
     const sections = document.querySelectorAll('section');
     
     window.addEventListener('scroll', () => {
@@ -67,17 +75,41 @@ document.addEventListener('DOMContentLoaded', () => {
             const sectionHeight = section.clientHeight;
             
             // 120px é uma margem de segurança para a troca ocorrer um pouco antes
-            if (pageYOffset >= (sectionTop - 120)) {
+            if (window.scrollY >= (sectionTop - 150)) {
                 current = section.getAttribute('id');
             }
         });
 
         navLinks.forEach(li => {
             li.classList.remove('active');
-            // Verifica se o href contém o ID da seção atual
-            if (li.getAttribute('href').includes(current)) {
+            // Verifica se existe um ID atual e se o link corresponde a ele
+            if (current && li.getAttribute('href').includes(current)) {
                 li.classList.add('active');
             }
         });
     });
+
+    // =========================================
+    // 5. SCROLL REVEAL (Animação de Entrada)
+    // =========================================
+    const reveals = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const elementVisible = 100; // Distância do topo para ativar a animação
+
+        reveals.forEach((reveal) => {
+            const elementTop = reveal.getBoundingClientRect().top;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveal.classList.add('active');
+            }
+        });
+    };
+
+    // Ativa a função ao rolar a página
+    window.addEventListener('scroll', revealOnScroll);
+    
+    // Executa uma vez no carregamento para mostrar o que já está visível
+    revealOnScroll();
 });
