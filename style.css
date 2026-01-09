@@ -292,7 +292,7 @@ ul {
     justify-content: center;
     font-size: 4rem;
     color: #aaa;
-    background-image: url('/images/fotoNossaHistoria.jpg');
+    background-image: url('images/fotoNossaHistoria.jpg');
     background-size: cover;
     background-position: center;
     
@@ -414,10 +414,10 @@ ul {
     background-size: cover;
     background-position: center;
 }
-.gallery-item:nth-child(1) { background-image: url('/images/producao/producao-1.jpg'); }
-.gallery-item:nth-child(2) { background-image: url('/images/producao/producao-2.jpg'); }
-.gallery-item:nth-child(3) { background-image: url('/images/producao/producao-3.jpg'); }
-.gallery-item:nth-child(4) { background-image: url('/images/producao/producao-4.jpg'); }
+.gallery-item:nth-child(1) { background-image: url('images/producao/producao-1.jpg'); }
+.gallery-item:nth-child(2) { background-image: url('images/producao/producao-2.jpg'); }
+.gallery-item:nth-child(3) { background-image: url('images/producao/producao-3.jpg'); }
+.gallery-item:nth-child(4) { background-image: url('images/producao/producao-4.jpg'); }
 
 /* --- Contato) --- */
 .cta-section {
