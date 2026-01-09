@@ -56,9 +56,13 @@ ul {
     background-color: var(--bg-light);
 }
 
+.text-center {
+    text-align: center;
+}
+
 /* --- Header --- */
 .header {
-    background: var(--white);
+    background: var(--bg-light);
     box-shadow: var(--shadow);
     position: fixed;
     width: 100%;
@@ -92,10 +96,28 @@ ul {
 .nav-menu a {
     font-weight: 600;
     transition: var(--transition);
+    font-size: 0.95rem;
+    position: relative; 
 }
 
 .nav-menu a:hover {
     color: var(--primary-color);
+}
+
+.nav-menu a.active {
+    color: var(--primary-color);
+}
+
+.nav-menu a.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    border-radius: 2px;
 }
 
 .btn-contact {
@@ -121,8 +143,7 @@ ul {
 /* --- Hero Section --- */
 .hero {
     height: 100vh;
-    min-height: 500px;
-    /* Substituir pela imagem real depois */
+    min-height: 550px;
     background-image: url('https://images.unsplash.com/photo-1506543730435-f2c8d21d9c0d?q=80&w=2000&auto=format&fit=crop'); 
     background-size: cover;
     background-position: center;
@@ -138,14 +159,73 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.55); 
 }
 
 .hero-content {
     position: relative;
     color: var(--white);
-    max-width: 600px;
+    max-width: 700px;
     z-index: 1;
+}
+
+.badge {
+    background-color: var(--accent-color);
+    color: var(--primary-hover);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hero {
+    height: 100vh;
+    min-height: 550px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    overflow: hidden; 
+}
+
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* TROQUE PELA SUA IMAGEM AQUI */
+    background-image: url('images/bannerVerdurasElohim.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1; 
+
+    animation: kenBurns 20s infinite alternate ease-in-out;
+}
+
+/* A definição da animação */
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); 
+    z-index: 0;
 }
 
 .hero h1 {
@@ -158,6 +238,7 @@ ul {
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    opacity: 0.9;
 }
 
 .hero-buttons {
@@ -202,17 +283,23 @@ ul {
 
 .img-placeholder {
     width: 100%;
-    height: 400px;
+    max-width: 400px; 
+    aspect-ratio: 1 / 1; 
     background-color: #ddd;
-    border-radius: 10px;
+    border-radius: 50%; 
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 4rem;
     color: #aaa;
-    background-image: url('https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=1000&auto=format&fit=crop');
+    background-image: url('/images/fotoNossaHistoria.jpg');
     background-size: cover;
     background-position: center;
+    
+
+    margin: 0 auto; 
+    box-shadow: 0 15px 30px rgba(46, 125, 50, 0.3);
+    border: 5px solid var(--white); 
 }
 
 .features-list {
@@ -225,10 +312,50 @@ ul {
     align-items: center;
     gap: 10px;
     font-weight: 600;
+    color: var(--text-dark);
 }
 
 .features-list i {
     color: var(--primary-color);
+}
+
+/* --- Atacado e Varejo Section --- */
+.bg-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.bg-primary h2 {
+    color: var(--white);
+    margin-bottom: 50px;
+}
+
+.business-types {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.b-type {
+    background: rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 15px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.b-type i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.b-type h3 {
+    color: var(--white);
+    margin-bottom: 15px;
 }
 
 /* --- Produtos --- */
@@ -250,6 +377,7 @@ ul {
     text-align: center;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    border-bottom: 4px solid var(--accent-color);
 }
 
 .product-card:hover {
@@ -257,9 +385,19 @@ ul {
 }
 
 .product-icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 20px;
+}
+
+.product-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
 }
 
 /* --- Galeria --- */
@@ -276,14 +414,14 @@ ul {
     background-size: cover;
     background-position: center;
 }
-.gallery-item:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?q=80&w=800'); }
-.gallery-item:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?q=80&w=800'); }
-.gallery-item:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1557234195-67013124ce68?q=80&w=800'); }
-.gallery-item:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1628771065518-0d82f1938462?q=80&w=800'); }
+.gallery-item:nth-child(1) { background-image: url('/images/producao/producao-1.jpg'); }
+.gallery-item:nth-child(2) { background-image: url('/images/producao/producao-2.jpg'); }
+.gallery-item:nth-child(3) { background-image: url('/images/producao/producao-3.jpg'); }
+.gallery-item:nth-child(4) { background-image: url('/images/producao/producao-4.jpg'); }
 
 /* --- Contato --- */
 .contact-section {
-    background-color: var(--primary-color);
+    background-color: var(--earth-color); /* Mudança para marrom terra para diferenciar */
     color: var(--white);
     text-align: center;
 }
@@ -294,10 +432,9 @@ ul {
 }
 
 .contact-box {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
     padding: 40px;
     border-radius: 20px;
-    backdrop-filter: blur(5px);
 }
 
 .contact-info {
@@ -311,27 +448,29 @@ ul {
 .info-item i {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    color: var(--accent-color);
 }
 
 .btn-whatsapp-large {
     display: inline-block;
-    background-color: var(--white);
-    color: var(--primary-color);
+    background-color: #25D366;
+    color: var(--white);
     padding: 15px 40px;
     border-radius: 50px;
     font-weight: 700;
     font-size: 1.2rem;
     transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
 }
 
 .btn-whatsapp-large:hover {
-    background-color: #f0f0f0;
+    background-color: #128C7E;
     transform: scale(1.05);
 }
 
-/* --- Footer (Rodapé) --- */
+/* --- Footer --- */
 footer {
-    background-color: var(--earth-color);
+    background-color: #3E2723; /* Marrom mais escuro */
     color: #ccc;
     padding: 40px 0;
     margin-top: auto;
@@ -363,7 +502,6 @@ footer {
     width: 100%;
 }
 
-/* Estilos da Codexo */
 .footer-credits {
     display: flex;
     align-items: center;
@@ -379,12 +517,10 @@ footer {
 }
 
 .codexo-logo {
-    height: 20px; /* Altura discreta para a logo */
+    height: 20px;
     vertical-align: middle;
-    /* Se a imagem não carregar, o texto alt aparece, mas o link funciona */
 }
 
-/* Fallback visual caso a imagem falhe (opcional) */
 .codexo-link {
     font-weight: 700;
     color: var(--white);
@@ -415,6 +551,23 @@ footer {
     .nav-menu ul {
         flex-direction: column;
         width: 100%;
+    }
+
+    .nav-menu a.active {
+    color: var(--primary-color);
+    position: relative;
+    }
+
+    .nav-menu a.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    border-radius: 2px;
     }
 
     .hero h1 {
